@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+{% block title %}Register Your Car - Home{% endblock %}
+
+{% block content %}
+<header class="masthead bg-primary text-white text-center">
+        <div class="container">
+        <!-- Masthead Avatar Image -->
+        <img src="{{url_for('static', filename='car.jpg')}}" align="middle" />
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading mb-0">Web Portal</h1>
+        <!-- Icon Divider-->    
+
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div> 
+        <!-- Masthead Subheading -->
+        <p class="pre-wrap masthead-subheading font-weight-light mb-0">By CheckYourCar</p>
+        </div>
+</header>
+{% endblock %}
