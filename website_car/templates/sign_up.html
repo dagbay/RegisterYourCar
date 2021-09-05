@@ -1,8 +1,7 @@
 {% extends "base.html" %} 
-{% block title %}Register Your Car - Sign Up
-{% endblock%} 
+{% block title %}Register Your Car - Sign Up{% endblock%} 
+
 {% block content %}
-    <header class="masthead bg-primary text-white text-center">
         <div class="container">
            <!-- Portfolio Section Heading-->
            <div class="text-center">
@@ -14,19 +13,23 @@
               <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
               <div class="divider-custom-line"></div>
            </div>
-           <form method="post" action="connect.php">
+           <form method="POST">
               <div class="form-group">
-                 <label for="email_address">Email Address</label>
+                 <label for="email_address">
+                  <p class="pre-wrap masthead-subheading font-weight-light mb-0">Email Address</p>
+                 </label>
                  <input
                     type="email"
                     class="form-control"
                     id="email_address"
                     name="email_address"
-                    placeholder="Enter email"
+                    placeholder="Enter email address"
                     />
               </div>
               <div class="form-group">
-                 <label for="full_name">Full Name</label>
+                 <label for="full_name">
+                  <p class="pre-wrap masthead-subheading font-weight-light mb-0">Full Name</p>
+                 </label>
                  <input
                     type="text"
                     class="form-control"
@@ -36,7 +39,9 @@
                     />
               </div>
               <div class="form-group">
-                 <label for="username">Username</label>
+                 <label for="username">
+                  <p class="pre-wrap masthead-subheading font-weight-light mb-0">Username</p>
+                 </label>
                  <input
                     type="text"
                     class="form-control"
@@ -46,7 +51,9 @@
                     />
               </div>
               <div class="form-group">
-                 <label for="password1">Password</label>
+                 <label for="password1">
+                  <p class="pre-wrap masthead-subheading font-weight-light mb-0">Password</p>
+                 </label>
                  <input
                     type="password"
                     class="form-control"
@@ -56,7 +63,9 @@
                     />
               </div>
               <div class="form-group">
-                 <label for="password2">Confirm Your Password</label>
+                 <label for="password2">
+                  <p class="pre-wrap masthead-subheading font-weight-light mb-0">Confirm Password</p>
+                 </label>
                  <input
                     type="password"
                     class="form-control"
@@ -66,8 +75,9 @@
                     />
               </div>
               <br />
-              <button type="submit" class="btn btn-secondary">Submit</button>
+              <button type="submit" class="btn btn-secondary">
+                  <p class="pre-wrap masthead-subheading font-weight-light mb-0">Sign Up</p>
+              </button>
            </form>
         </div>
-     </header>
 {% endblock %}

@@ -55,6 +55,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav ml-auto">
+                  {% if user.is_authenticated %}
                   <li class="nav-item mx-0 mx-lg-1">
                      <a
                         class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
@@ -65,15 +66,23 @@
                   <li class="nav-item mx-0 mx-lg-1">
                      <a
                         class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                        href="/login"
-                        >LOG IN</a
+                        href="/logout"
+                        >LOG OUT</a
                         >
                   </li>
                   <li class="nav-item mx-0 mx-lg-1">
                      <a
                         class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                        href="/logout"
-                        >LOG OUT</a
+                        href="/contact_us"
+                        >CONTACT US</a
+                        >
+                  </li>
+                  {% else %}
+                  <li class="nav-item mx-0 mx-lg-1">
+                     <a
+                        class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                        href="/login"
+                        >LOG IN</a
                         >
                   </li>
                   <li class="nav-item mx-0 mx-lg-1">
@@ -90,11 +99,45 @@
                         >CONTACT US</a
                         >
                   </li>
+                  {% endif %}
                </ul>
             </div>
          </div>
       </nav>
-      {% block content %} {% endblock %} {% block footer %}
+
+      
+      <header class="masthead bg-primary text-white text-center">
+      <!-- Flash Setup -->
+      <div class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+         {% for category, message in messages %}
+            {% if category == 'error' %}
+            <div class="alert alert-danger alert-dismissable fade show" role="alert">
+               {{ message }}
+               <button type="button" class="close" data-dismiss="alert">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            {% else %}
+            <div class="alert alert-success alter-dismissable fade show" role="alert">
+               {{ message }}
+               <button type="button" class="close" data-dismiss="alert">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            {% endif %}
+         {% endfor %}
+      {% endif %}
+      {% endwith %}
+      </div>
+      <!-- Extension -->
+      {% block content %} 
+      
+      {% endblock %}
+      </header>
+      
+      <!-- Footer -->
       <footer class="footer text-center">
          <div class="container">
             <div class="row">
@@ -105,7 +148,7 @@
                </div>
                <!-- Footer Social Icons-->
                <div class="col-lg-4 mb-5 mb-lg-0">
-                  <h4 class="mb-4">AROUND THE WEB</h4>
+                  <h4 class="mb-4">OTHER SOCIALS</h4>
                   <a
                      class="btn btn-outline-light btn-social mx-1"
                      href="https://www.facebook.com/StartBootstrap"
@@ -132,7 +175,7 @@
             </div>
          </div>
       </footer>
-      {% endblock %}
+
       <!-- Copyright Section-->
       <section class="copyright py-4 text-center text-white">
          <div class="container">
