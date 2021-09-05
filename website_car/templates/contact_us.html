@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Register Your Car - Contact Us{% endblock %}
+
+{% block content %}
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <div class="text-center">
+                <h2 class="masthead-heading mb-0">CONTACT US</h2>
+            </div>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <p class="pre-wrap masthead-subheading font-weight-light mb-0">Got Any Problems? Let Us Know!</p>
+            <br/>
+            <form method="POST">
+                <textarea name="note" id="note" class="form-control"></textarea>
+                <br />
+                <div align="center">
+                  <button type="submit" class="btn btn-secondary">
+                    <p class="pre-wrap masthead-subheading font-weight-light mb-0">Submit</p>
+                  </button>
+                </div>
+              </form>
+        </div>
+{% endblock %}
