@@ -1,40 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8" />
-      <meta
-         name="viewport"
-         content="width=device-width, initial-scale=1, shrink-to-fit=no"
-         />
-      <!-- Font Awesome icons (free version)-->
-      <script
-         src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
-         crossorigin="anonymous"
-         ></script>
-      <!-- Core theme CSS (includes Bootstrap)-->
-      <link
-         rel="stylesheet"
-         type="text/css"
-         href="{{ url_for('static', filename='styles.css') }} "
-         />
-      <!-- Fonts CSS-->
-      <link
-         rel="stylesheet"
-         type="text/css"
-         href="{{ url_for('static', filename='heading.css') }}"
-         />
-      <link
-         rel="stylesheet"
-         type="text/css"
-         href="{{ url_for('static', filename='body.css') }}"
-         />
-      <title>{% block title %}Register Your Car{% endblock %}</title>
-   </head>
-   <body id="page-top">
-      <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
-         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#top"
-               >Register Your Car</a
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }} " />
+    <!-- Fonts CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='heading.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='body.css') }}" />
+    <title>{% block title %}Register Your Car{% endblock %}</title>
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#top">Register Your Car</a
                >
             <button
                class="
@@ -59,8 +42,8 @@
                   <li class="nav-item mx-0 mx-lg-1">
                      <a
                         class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                        href="/"
-                        >HOME</a
+                        href="/dashboard"
+                        >DASHBOARD</a
                         >
                   </li>
                   <li class="nav-item mx-0 mx-lg-1">
@@ -81,6 +64,13 @@
                   <li class="nav-item mx-0 mx-lg-1">
                      <a
                         class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                        href="/"
+                        >HOME</a
+                        >
+                  </li>
+                  <li class="nav-item mx-0 mx-lg-1">
+                     <a
+                        class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                         href="/login"
                         >LOG IN</a
                         >
@@ -90,13 +80,6 @@
                         class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                         href="/sign_up"
                         >SIGN UP</a
-                        >
-                  </li>
-                  <li class="nav-item mx-0 mx-lg-1">
-                     <a
-                        class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                        href="/contact_us"
-                        >CONTACT US</a
                         >
                   </li>
                   {% endif %}
@@ -131,6 +114,7 @@
       {% endif %}
       {% endwith %}
       </div>
+      
       <!-- Extension -->
       {% block content %} 
       
@@ -166,48 +150,32 @@
                      href="https://www.dribble.com/startbootstrap"
                      ><i class="fab fa-fw fa-dribbble"></i
                      ></a>
-               </div>
-               <!-- Footer About Text-->
-               <div class="col-lg-4">
-                  <h4 class="mb-4">ABOUT REGISTER YOUR CAR</h4>
-                  <p class="pre-wrap lead mb-0">Register Your Car is a free to use, MIT licensed Bootstrap theme created by Start Bootstrap (Change this)</p>
-               </div>
-            </div>
-         </div>
-      </footer>
+        </div>
 
-      <!-- Copyright Section-->
-      <section class="copyright py-4 text-center text-white">
-         <div class="container">
-            <small class="pre-wrap">Copyright © Register Your Car 2021</small>
-         </div>
-      </section>
-      <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-      <div class="scroll-to-top d-lg-none position-fixed">
-         <a
-            class="js-scroll-trigger d-block text-center text-white rounded"
-            href="#page-top"
-            ><i class="fa fa-chevron-up"></i
+        <!-- Footer About Text-->
+        <div class="col-lg-4">
+            <h4 class="mb-4">ABOUT REGISTER YOUR CAR</h4>
+            <p class="pre-wrap lead mb-0">Register Your Car is a free to use website to see recalls your vehicles may have</p>
+        </div>
+        </div>
+        </div>
+        </footer>
+
+        <!-- Copyright Section-->
+        <section class="copyright py-4 text-center text-white">
+            <div class="container">
+                <small class="pre-wrap">Copyright © Register Your Car 2021</small>
+            </div>
+        </section>
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+        <div class="scroll-to-top d-lg-none position-fixed">
+            <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i
             ></a>
-      </div>
-      <script
-         src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-         crossorigin="anonymous"
-         ></script>
-      <script
-         src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-         crossorigin="anonymous"
-         ></script>
-      <script
-         src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-         crossorigin="anonymous"
-         ></script>
-      <script
-         type="text/javascript"
-         src="{{ url_for('static', filename='index.js') }}"
-         ></script>
-   </body>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+
 </html>

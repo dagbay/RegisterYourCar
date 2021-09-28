@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, redirect, request, flash, redirect
 from . import models, db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
+import smtplib
 
 auth = Blueprint('auth', __name__)
 
@@ -14,10 +15,10 @@ def login():
 
         user = models.User.query.filter_by(username=username).first()
         if user:
-            if check_password_hash(user.password, password):
+            if check_password_hash(user.password, password): 
                 flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
-                return redirect(url_for('views.home'))
+                return redirect(url_for('views.dashboard'))
             else:
                 flash('Incorrect username or password.', category='error')
         else:
@@ -30,7 +31,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('auth.login'))
+    return redirect(url_for('views.index'))
 
 #  Sign Up Function
 @auth.route('/sign_up', methods=['GET', 'POST'])
@@ -72,3 +73,32 @@ def sign_up():
             return redirect(url_for('auth.login'))
 
     return render_template("sign_up.html", user=current_user)
+
+#  Profile Function
+@auth.route('/profile', methods=['GET', 'POST'])
+@login_required
+def profile():
+    if request.method == 'POST':
+
+        full_name = request.form.get('full_name')
+        username = request.form.get('username')
+        email_address = request.form.get('email_address')
+
+        user = models.User.query.filter_by(email_addr=email_address).first()
+
+        if user:
+            flash('Email already exists.', category='error')
+        elif models.User.query.filter_by(username=user).first():
+            flash('Username already exists.', category='error')
+        else:
+            if full_name != '':
+                setattr(current_user, 'full_name', full_name)
+            if username != '':
+                setattr(current_user, 'username', username)
+            if email_address != '':
+                setattr(current_user, 'email_addr', email_address)
+            db.session.commit()
+            flash('Changes were made!', category='success')
+            return redirect(url_for('auth.profile'))
+
+    return render_template("profile.html", user=current_user)

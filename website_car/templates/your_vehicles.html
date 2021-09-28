@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Register Your Car - Your Vehicles{% endblock %} {% block content %}
+
+<div class='container'>
+    <h1>Your Vehicles</h1>
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+
+    <div class='row'>
+        <div class="card-deck mx-auto">
+
+            {% for vehicle in user.vehicles %}
+
+            <div class="card bg-secondary col-sm-6">
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title">{{vehicle.make}} {{vehicle.model}}</h4>
+                    {% if vehicle.info == None %}
+                    <p class='card-text'>Info not available right now</p>
+                    {% else %}
+                    <p class="card-text">{{vehicle.info}}</p>
+                    {% endif %}
+                </div>
+                <hr>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

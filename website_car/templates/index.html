@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block title %}Register Your Car - Home{% endblock %} {% block content %}
+<div class="container">
+    <div class='featurette'>
+        <img src="{{ url_for('static', filename='car.jpg') }}" class="featurette-image pull-right" alt='car'>
+        <h2 class='featurette-heading'>
+            Register Your Car With Us Now!
+        </h2>
+        <p class='lead'>
+            And we will provide you with useful information such as recalls from your vehicle's make.
+        </p>
+    </div>
+    <hr class="featurette-divider">
+    <a href='/sign_up'>
+        <button type="submit" class="btn btn-secondary">
+        <p class="pre-wrap masthead-subheading font-weight-light mb-0">Click here to get started</p>
+    </button>
+    </a>
+</div>
+{% endblock %}

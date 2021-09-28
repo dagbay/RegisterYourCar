@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block title %}Register Your Car - Home{% endblock %} {% block content %}
+<div class="container">
+    <!-- Masthead Avatar Image -->
+    <img src="{{url_for('static', filename='car.jpg')}}" height='300' width='300' align="middle" alt='car' />
+    <!-- Masthead Heading-->
+    <h1 class="masthead-heading mb-0">Web Portal</h1>
+
+    <!-- Masthead Subheading -->
+    <p class="pre-wrap masthead-subheading font-weight-light mb-0">By CheckYourCar</p>
+
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+
+    <div class='row'>
+        <div class="card-deck mx-auto">
+            <div class="card bg-secondary col-sm-6">
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title">Register Vehicle</h4>
+                    <p class="card-text">To receive information on your vehicle.</p>
+                </div>
+                <a href="/register_vehicle" class="btn btn-secondary btn-outline-light stretched-link"></a>
+                <hr>
+            </div>
+            <div class="card bg-secondary col-sm-6">
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title">Your Vehicles</h4>
+                    <p class="card-text">Have a look through your vehicles and check for recalls.</p>
+                </div>
+                <a href="/your_vehicles" class="btn btn-secondary btn-outline-light stretched-link"></a>
+                <hr>
+            </div>
+            <div class="card bg-secondary col-sm-6">
+                <hr>
+                <div class="card-body">
+                    <h4 class="card-title">Edit Your Profile</h4>
+                    <p class="card-text">Update your personal information.</p>
+                </div>
+                <a href="/profile" class="btn btn-secondary btn-outline-light stretched-link"></a>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

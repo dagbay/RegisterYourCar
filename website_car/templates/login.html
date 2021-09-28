@@ -1,45 +1,32 @@
-{% extends "base.html" %} {% block title %}Register Your Car - Login{% endblock%}
-{% block content %}
-    <div class="container">
-       <!-- Portfolio Section Heading-->
-       <div class="text-center">
-          <h2 class="masthead-heading mb-0">LOG IN</h2>
-       </div>
-       <!-- Icon Divider-->
-       <div class="divider-custom divider-light">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
-       </div>
-       <form method="POST">
-          <div class="form-group">
-             <label for="username">
+{% extends "base.html" %} {% block title %}Register Your Car - Login{% endblock%} {% block content %}
+<div class="container mx-auto col-lg-4">
+    <!-- Portfolio Section Heading-->
+    <div class="text-center">
+        <h2 class="masthead-heading mb-0">LOG IN</h2>
+    </div>
+    <!-- Icon Divider-->
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+    <form class='p-4 m-md-5' method="POST">
+        <div class="form-floating mb-3">
+            <label for="username">
                <p class="pre-wrap masthead-subheading font-weight-light mb-0">Username</p>
              </label>
-             <input
-                type="text"
-                class="form-control"
-                id="username"
-                name="username"
-                placeholder="Enter username"
-                />
-          </div>
-          <div class="form-group">
-             <label for="password1">
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" />
+        </div>
+        <div class="form-floating mb-3">
+            <label for="password1">
                <p class="pre-wrap masthead-subheading font-weight-light mb-0">Password</p>
              </label>
-             <input
-                type="password"
-                class="form-control"
-                id="password1"
-                name="password1"
-                placeholder="Enter password"
-                />
-          </div>
-          <br />
-          <button type="submit" class="btn btn-secondary">
+            <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password" />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-secondary">
             <p class="pre-wrap masthead-subheading font-weight-light mb-0">Log In</p>
           </button>
-       </form>
-    </div>
+    </form>
+</div>
 {% endblock %}
