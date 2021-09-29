@@ -3,14 +3,16 @@ from flask_login import login_required, current_user
 import smtplib
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import models, db
-# import json
 
+# Set views as a blueprint for use in other python files.
 views = Blueprint('views', __name__)
 
+# Function for the index page
 @views.route('/')
 def index():
     return render_template("index.html", user=current_user)
 
+# Function for the contact us page
 @views.route('/contact_us', methods=['GET', 'POST'])
 def contact_us():
 
@@ -29,11 +31,13 @@ def contact_us():
 
     return render_template("contact_us.html", user=current_user)
 
+# Function for the dashboard page
 @views.route('/dashboard')
 @login_required
 def dashboard():
     return render_template("dashboard.html", user=current_user)
 
+# Function for the register vehicle page
 @views.route('/register_vehicle', methods=['GET', 'POST'])
 @login_required
 def register_vehicle():
@@ -53,11 +57,13 @@ def register_vehicle():
     
     return render_template("register_vehicle.html", user=current_user)
 
+# Function for the profile page which can only be accessed when the user is logged in.
 @views.route('/profile')
 @login_required
 def profile():
     return render_template("profile.html", user=current_user)
 
+# Function for the your vehicles page which can only be accessed when the user is logged in.
 @views.route('/your_vehicles')
 @login_required
 def your_vehicles():

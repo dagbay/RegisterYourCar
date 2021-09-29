@@ -8,6 +8,7 @@ from sqlalchemy.sql.functions import user
 db = SQLAlchemy()
 DB_CARS = "cars.db"
 
+# This function will boot up the website to localhosts
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'regicar'
@@ -24,6 +25,7 @@ def create_app():
 
     create_database(app)
 
+    # Login manager
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
@@ -34,6 +36,7 @@ def create_app():
 
     return app
 
+# This function creates the database for data storage
 def create_database(app):
     if not path.exists('website_car/' + DB_CARS):
         db.create_all(app=app)

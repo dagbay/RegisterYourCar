@@ -4,6 +4,7 @@ from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
+# User column 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
 
@@ -13,6 +14,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(255))
     vehicles = db.relationship('Vehicle')
 
+# Vehicle column
 class Vehicle(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
